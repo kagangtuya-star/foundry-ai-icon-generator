@@ -1,35 +1,42 @@
-.van-gogh-generate {
-  color: #ff6400 !important;
-}
-
-.van-gogh-btn {
-  width: 96%;
-  margin: 0 auto 5px;
-  display: block;
+.van-gogh-workbench {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .van-gogh-workbench .drop-zone {
-  border: 2px dashed #782e22;
-  border-radius: 5px;
-  padding: 20px;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 30px 20px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
   margin-bottom: 10px;
-  color: #782e22;
+  color: #555;
+  transition: all 0.2s ease;
+  flex: 0 0 auto;
+}
+
+.van-gogh-workbench .drop-zone:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.4);
+  color: #333;
 }
 
 .van-gogh-workbench .drop-zone i {
   font-size: 3em;
   margin-bottom: 10px;
+  opacity: 0.7;
 }
 
 .van-gogh-workbench .queue-container {
-  height: 450px;
+  flex: 1;
   overflow-y: auto;
-  border: 1px solid #782e22;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 8px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
 }
 
 .van-gogh-workbench .item-list {
@@ -39,17 +46,37 @@
 }
 
 .van-gogh-workbench .item {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid #782e22;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  padding: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  padding: 6px 10px;
   align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: background 0.2s;
+}
+
+.van-gogh-workbench .item:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.van-gogh-workbench .image-wrapper {
+  flex: 0 0 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #000;
 }
 
 .van-gogh-workbench .item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border: none;
-  margin-right: 10px;
+  display: block;
 }
 
 .van-gogh-workbench .item-name {
@@ -58,24 +85,67 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
 }
 
 .van-gogh-workbench .item-status {
-  margin-right: 10px;
+  flex: 0 0 auto;
+  margin-right: 15px;
   font-size: 0.9em;
-  color: #555;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.van-gogh-workbench .item-status i {
+  font-size: 1.1em;
 }
 
 .van-gogh-workbench .item-controls {
-  flex: 0 0 20px;
+  flex: 0 0 24px;
   text-align: center;
 }
 
+.van-gogh-workbench .item-control {
+  color: #555;
+  transition: color 0.2s;
+}
+
+.van-gogh-workbench .item-control:hover {
+  color: #c50f1f;
+  text-shadow: 0 0 2px rgba(255,0,0,0.2);
+}
+
 .van-gogh-workbench .sheet-footer {
-  margin-top: 10px;
+  flex: 0 0 auto;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .van-gogh-workbench .sheet-footer button {
   flex: 1;
   margin: 0 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.van-gogh-workbench .generate-btn {
+  background: rgba(50, 205, 50, 0.1);
+}
+
+.van-gogh-workbench .generate-btn:hover:not(:disabled) {
+  background: rgba(50, 205, 50, 0.2);
+  box-shadow: 0 0 5px rgba(50, 205, 50, 0.3);
+}
+
+.van-gogh-workbench .clear-btn {
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.van-gogh-workbench .clear-btn:hover:not(:disabled) {
+  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
 }

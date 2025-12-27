@@ -4,6 +4,7 @@ export class VanGoghApi {
     const apiKey = game.settings.get("van-gogh", "apiKey");
     const model = game.settings.get("van-gogh", "model");
     const apiType = game.settings.get("van-gogh", "apiType");
+    let storagePath = game.settings.get("van-gogh", "storagePath");
 
     // Auto-fix URL
     apiUrl = apiUrl.replace(/\/+$/, ""); // Remove trailing slashes
@@ -33,14 +34,40 @@ export class VanGoghApi {
       throw new Error(msg);
     }
 
-    const prompt = `Subject: ${item.name}
-Description: ${item.system.description?.value?.replace(/<[^>]*>?/gm, '') || item.name}
+    if (!storagePath) {
+      const msg = "Van Gogh: Please configure the Storage Path in settings.";
+      if (!options.silent) ui.notifications.error(msg);
+      throw new Error(msg);
+    }
+
+    // Ensure no trailing slash and decode URI components (fix for Chinese paths)
+    storagePath = decodeURIComponent(storagePath.replace(/\/+$/, ""));
+
+    const description = item.system.description?.value?.replace(/<[^>]*>?/gm, '') || item.name;
+    let prompt;
+
+    if (item.type === "spell" || item.type === "feat") {
+      prompt = `Design a 2D game UI icon in the style of Baldur's Gate 3 "Status Effects" or "Conditions". It should be a stylized, glowing energy pictogram, NOT a realistic 3D object. The subject is:
+${description}
+. Visual Style Instructions:
+1. Represent this concept as a simplified abstract SYMBOL (pictogram), like a cave painting made of light.
+2. The lines should look like sketchy, hand-drawn energy strokes, not perfect vector lines.
+3. Add a strong "Outer Glow" effect.
+4. Color: Use a single dominant color (e.g., Blue for magic, Red for attack, Gold for holy).
+5. Background: Isolated on Pure Black (for easy screen-blending).
+6. NO borders, NO frames, NO realistic textures, NO text.
+Aspect Ratio: Strictly 1:1 Square.`;
+    } else {
+      prompt = `Subject: ${item.name}
+Description: ${description}
 Art Style: Baldur's Gate 3 UI icon style, dark fantasy, semi-realistic digital painting.
 Composition: Single object, centered, isometric angle, slight macro zoom.
 Lighting: Cinematic rim lighting, moody atmosphere, sharp contrast between light and shadow.
 Texture: Weathered, gritty, metallic gloss, tangible material feeling.
 Background: Isolated on pure black (or white) background for easy transparency.
-Negative Prompt: Text, numbers, interface elements, low resolution, blurry, cartoon, anime style, borders, frames.`;
+Negative Prompt: Text, numbers, interface elements, low resolution, blurry, cartoon, anime style, borders, frames.
+Aspect Ratio: Strictly 1:1 Square.`;
+    }
 
     try {
       if (!options.silent) ui.notifications.info(game.i18n.localize("VAN-GOGH.Generating"));
@@ -164,8 +191,20 @@ Negative Prompt: Text, numbers, interface elements, low resolution, blurry, cart
 
       // Save image to assets
       const filename = `${item.id}_${Date.now()}.png`;
-      const uploadPath = "modules/van-gogh/assets";
+      const uploadPath = storagePath;
       
+      // Check if directory exists, if not create it
+      try {
+        await FilePicker.browse("data", uploadPath);
+      } catch (e) {
+        try {
+          await FilePicker.createDirectory("data", uploadPath);
+        } catch (createErr) {
+          console.error("Van Gogh: Failed to create directory", createErr);
+          // Don't throw here, let upload try and potentially fail with a better error or maybe it existed
+        }
+      }
+
       // Create the file from source (base64 or url)
       // Note: Fetching from URL might fail if CORS is not enabled on the target server, 
       // but standard OpenAI URLs support CORS.

@@ -38,4 +38,14 @@ export const registerSettings = () => {
     type: String,
     default: "dall-e-3",
   });
+
+  game.settings.register("van-gogh", "storagePath", {
+    name: "VAN-GOGH.Settings.StoragePath.Name",
+    hint: "VAN-GOGH.Settings.StoragePath.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    filePicker: "folder",
+    default: "",
+  });
 };

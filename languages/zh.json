@@ -1,12 +1,22 @@
 {
   "VAN-GOGH.Settings.ApiUrl.Name": "API 地址",
-  "VAN-GOGH.Settings.ApiUrl.Hint": "OpenAI 兼容 API 端点的 URL (例如：https://api.openai.com/v1/images/generations)。",
+  "VAN-GOGH.Settings.ApiUrl.Hint": "<b style='color: #ff6400; font-size: 1.1em; display: block; margin-bottom: 5px;'>⚠️ 生成图片效果与模型强相关！未保证效果，请使用高质量模型（如Nano Banana）<br>⚠️ Image generation quality is strongly related to the model! For best results, please use high-quality models (e.g., Nano Banana).</b>OpenAI 兼容 API 端点的 URL (例如：https://api.openai.com/v1/images/generations)。",
   "VAN-GOGH.Settings.ApiKey.Name": "API 密钥",
   "VAN-GOGH.Settings.ApiKey.Hint": "您的服务 API 密钥。",
+  "VAN-GOGH.Settings.ApiType.Name": "API 类型",
+  "VAN-GOGH.Settings.ApiType.Hint": "选择要使用的 API 端点类型。“图像生成”用于标准 DALL-E 端点，“聊天补全”用于生成图像的 LLM。",
+  "VAN-GOGH.Settings.ApiType.Image": "图像生成 (/images/generations)",
+  "VAN-GOGH.Settings.ApiType.Chat": "聊天补全 (/chat/completions)",
   "VAN-GOGH.Settings.Model.Name": "模型",
   "VAN-GOGH.Settings.Model.Hint": "用于图像生成的模型 (例如：dall-e-3)。",
+  "VAN-GOGH.Settings.StoragePath.Name": "存储路径",
+  "VAN-GOGH.Settings.StoragePath.Hint": "生成的图标将保存到的目录路径 (例如：'van-gogh/icons')。此项必须手动配置。",
   "VAN-GOGH.GenerateIcon": "生成图标",
   "VAN-GOGH.Generating": "生成中...",
   "VAN-GOGH.Success": "图标生成成功！",
-  "VAN-GOGH.Error": "生成图标时出错："
+  "VAN-GOGH.Error": "生成图标时出错：",
+  "VAN-GOGH.Workbench.DropHint": "将物品拖放到此处以添加到队列。",
+  "VAN-GOGH.Workbench.Pending": "等待中",
+  "VAN-GOGH.Workbench.GenerateAll": "全部生成",
+  "VAN-GOGH.Workbench.ClearAll": "全部清除"
 }
