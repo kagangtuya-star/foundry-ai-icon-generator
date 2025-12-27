@@ -1,0 +1,40 @@
+<form class="van-gogh-workbench">
+    <div class="drop-zone">
+        <i class="fas fa-box-open"></i>
+        <p>{{localize "VAN-GOGH.Workbench.DropHint"}}</p>
+    </div>
+
+    <div class="queue-container">
+        <ul class="item-list">
+            {{#each items}}
+            <li class="item flexrow" data-id="{{this.id}}">
+                <img class="item-image" src="{{this.img}}" title="{{this.name}}" width="36" height="36"/>
+                <h4 class="item-name">{{this.name}}</h4>
+                <div class="item-status">
+                    {{#if this.loading}}
+                    <i class="fas fa-spinner fa-spin"></i>
+                    {{else if this.success}}
+                    <i class="fas fa-check" style="color:green"></i>
+                    {{else if this.error}}
+                    <i class="fas fa-exclamation-triangle" title="{{this.error}}" style="color:red"></i>
+                    {{else}}
+                    <span class="status-text">{{localize "VAN-GOGH.Workbench.Pending"}}</span>
+                    {{/if}}
+                </div>
+                <div class="item-controls">
+                    <a class="item-control item-delete" title="{{localize 'Delete'}}"><i class="fas fa-trash"></i></a>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <footer class="sheet-footer flexrow">
+        <button type="button" name="generate" class="generate-btn" {{#unless hasItems}}disabled{{/unless}}>
+            <i class="fas fa-magic"></i> {{localize "VAN-GOGH.Workbench.GenerateAll"}}
+        </button>
+        <button type="button" name="clear" class="clear-btn" {{#unless hasItems}}disabled{{/unless}}>
+            <i class="fas fa-trash"></i> {{localize "VAN-GOGH.Workbench.ClearAll"}}
+        </button>
+    </footer>
+</form>

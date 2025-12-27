@@ -1,0 +1,20 @@
+{
+  "VAN-GOGH.Settings.ApiUrl.Name": "API URL",
+  "VAN-GOGH.Settings.ApiUrl.Hint": "The URL of the OpenAI compatible API endpoint (e.g., https://api.openai.com/v1/images/generations).",
+  "VAN-GOGH.Settings.ApiKey.Name": "API Key",
+  "VAN-GOGH.Settings.ApiKey.Hint": "Your API Key for the service.",
+  "VAN-GOGH.Settings.ApiType.Name": "API Type",
+  "VAN-GOGH.Settings.ApiType.Hint": "Select the type of API endpoint to use. 'Image Generation' for standard DALL-E endpoints, 'Chat Completion' for LLMs that generate images.",
+  "VAN-GOGH.Settings.ApiType.Image": "Image Generation (/images/generations)",
+  "VAN-GOGH.Settings.ApiType.Chat": "Chat Completion (/chat/completions)",
+  "VAN-GOGH.Settings.Model.Name": "Model",
+  "VAN-GOGH.Settings.Model.Hint": "The model to use for image generation (e.g., dall-e-3).",
+  "VAN-GOGH.GenerateIcon": "Generate Icon",
+  "VAN-GOGH.Generating": "Generating...",
+  "VAN-GOGH.Success": "Icon generated successfully!",
+  "VAN-GOGH.Error": "Error generating icon: ",
+  "VAN-GOGH.Workbench.DropHint": "Drag and drop items here to add them to the queue.",
+  "VAN-GOGH.Workbench.Pending": "Pending",
+  "VAN-GOGH.Workbench.GenerateAll": "Generate All",
+  "VAN-GOGH.Workbench.ClearAll": "Clear All"
+}

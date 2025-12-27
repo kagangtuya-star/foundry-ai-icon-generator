@@ -1,0 +1,12 @@
+{
+  "VAN-GOGH.Settings.ApiUrl.Name": "API 地址",
+  "VAN-GOGH.Settings.ApiUrl.Hint": "OpenAI 兼容 API 端点的 URL (例如：https://api.openai.com/v1/images/generations)。",
+  "VAN-GOGH.Settings.ApiKey.Name": "API 密钥",
+  "VAN-GOGH.Settings.ApiKey.Hint": "您的服务 API 密钥。",
+  "VAN-GOGH.Settings.Model.Name": "模型",
+  "VAN-GOGH.Settings.Model.Hint": "用于图像生成的模型 (例如：dall-e-3)。",
+  "VAN-GOGH.GenerateIcon": "生成图标",
+  "VAN-GOGH.Generating": "生成中...",
+  "VAN-GOGH.Success": "图标生成成功！",
+  "VAN-GOGH.Error": "生成图标时出错："
+}

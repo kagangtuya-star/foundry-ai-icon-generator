@@ -1,0 +1,81 @@
+.van-gogh-generate {
+  color: #ff6400 !important;
+}
+
+.van-gogh-btn {
+  width: 96%;
+  margin: 0 auto 5px;
+  display: block;
+}
+
+.van-gogh-workbench .drop-zone {
+  border: 2px dashed #782e22;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  color: #782e22;
+}
+
+.van-gogh-workbench .drop-zone i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.van-gogh-workbench .queue-container {
+  height: 450px;
+  overflow-y: auto;
+  border: 1px solid #782e22;
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.van-gogh-workbench .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.van-gogh-workbench .item {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #782e22;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding: 5px;
+  align-items: center;
+}
+
+.van-gogh-workbench .item-image {
+  border: none;
+  margin-right: 10px;
+}
+
+.van-gogh-workbench .item-name {
+  flex: 1;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.van-gogh-workbench .item-status {
+  margin-right: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.van-gogh-workbench .item-controls {
+  flex: 0 0 20px;
+  text-align: center;
+}
+
+.van-gogh-workbench .sheet-footer {
+  margin-top: 10px;
+}
+
+.van-gogh-workbench .sheet-footer button {
+  flex: 1;
+  margin: 0 5px;
+}
