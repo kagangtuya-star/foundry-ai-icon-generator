@@ -42,3 +42,6 @@ Go to `Game Settings` -> `Configure Settings` -> `Module Settings` -> `Van Gogh`
 
 *Disclaimer: This module sends item names and descriptions to a third-party AI service. Please ensure you comply with the service's terms of use.*
 *免责声明：此模组会将物品名称和描述发送到第三方 AI 服务。请确保您遵守该服务的使用条款。*
+
+The Workbench button is located in the "Journal Entry" on the right.
+工作台按钮位于右侧的“日志文本”
